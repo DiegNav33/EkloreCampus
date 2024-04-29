@@ -1,0 +1,422 @@
+/*GENERALITIES*/
+@import "normalize";
+@import "box-sizing";
+@import "root";
+@import "body";
+
+.container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+/*GENERALITIES*/
+
+/*HEADER*/
+header {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+
+    .headerShortLived {
+        background-color: #EAB355;
+        padding: .5rem 0;
+        color: #fff;
+        z-index: -1;
+
+        p:first-child {
+            font-weight: bold;
+        }
+
+        span {
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                background-color: #004252;
+                width: 100%;
+                height: 100%;
+                display: inline-block;
+                content: "";
+                position: absolute;
+                right: 0;
+                left: 0;
+                z-index: -1;
+                bottom: -2px;
+                transform: rotate(-3deg);
+            }
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                margin: 0 1rem 0 1rem;
+            }
+
+            a {
+                background-color: #fff;
+                padding: 1rem 2rem;
+                color: #EAB355;
+
+                transition: .5s ease-in-out;
+
+                &:hover {
+                    background-color: #244351;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+    .navBar {
+        background-color: #fff;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        padding: 1rem 0;
+        background-color: #fff;
+
+        #logoAnchor {
+            border: none;
+
+            &:hover {
+                border: none;
+            }
+        }
+
+        img {
+            width: 18rem;
+        }
+
+        .active {
+            color: #244351;
+            border-bottom: 1px solid #244351;
+            font-weight: bold;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            list-style: none;
+        }
+
+        li {
+            font-size: 1.4rem;
+            padding: 0 1.5rem;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+        a {
+            color: #657e84;
+            border-bottom: 1px solid transparent;
+            transition: .5s ease-in-out;
+    
+            &:hover {
+                border-bottom: 1px solid #244351;
+                color: #244351;
+            }
+        }
+
+        span {
+            font-size: 1rem;
+        }
+
+        #icons {
+            cursor: pointer;
+            display: none;
+        }
+    }
+
+    #burgerMenu {
+        display: none;
+    }
+}
+/*HEADER*/
+
+/*MAIN*/
+main {
+    background-color: #244351;
+    position: relative;
+    overflow:hidden;
+
+    .drawTop, .drawBottom {
+        position: absolute;
+        width: 10vw;
+        height: 30vh;
+    }
+
+    .drawBottom {
+        bottom: 0;
+    }
+
+    .draw-1 {
+        position: absolute;
+        border: 2px solid #ff0;
+        height: 8rem;
+        width: 8rem;
+        border-radius: 50%;
+        top: -60px;
+        left: 10px;
+    }
+
+    .draw-2 {
+        position: absolute;
+        border: 2px solid green;
+        height: 8rem;
+        width: 18rem;
+        border-radius: 10rem 10rem 0 0;
+        rotate: 180deg;
+        top: 20px;
+        left: -90px;
+    }
+
+    .draw-3 {
+        position: absolute;
+        width: 5rem;
+        height: 10rem;
+        border: 1px solid red;
+        left: 90px;
+        top: -2px;
+    }
+
+    .draw-4 {
+        position: absolute;
+        width: 10rem;
+        height: 10rem;
+        border: 2px solid red;
+        border-radius: 50%;
+        left: -35px;
+        bottom: -34px;
+    }
+
+    .draw-5 {
+        position: absolute;
+        width: 8rem;
+        height: 8rem;
+        border: 2px solid #ff0;
+        border-radius: 50%;
+        bottom: -30px;
+        right: 0;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+
+        article {
+            width: 45%;
+        }
+
+        .mainTitle {
+            margin-top: 15rem;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+
+            p {
+                margin: 3rem 0;
+            }
+        }
+        
+        span {
+            color: #EAB355;
+        }
+
+        a {
+            padding: 1.5rem .5rem;
+            text-align: center;
+            width: 50%;
+            background-color: #EAB355;
+            border: 1px solid transparent;
+            color: #fff;
+            transition: .5s ease-in-out;
+
+            &:hover {
+
+                background-color: transparent;
+                border: 1px solid #EAB355;
+                color: #EAB355;
+            }
+        }
+        
+        .contentMain {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .school::-webkit-scrollbar, .news::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .school, .news {
+            width: 48%;
+            height: 650px;
+            overflow-y:scroll;
+
+            .imageContainer {
+                width: 100%;
+                height: 150px;
+                overflow: hidden;
+            }
+            
+            .card {
+                background-color: #EAB355;
+                margin: 2rem 0;
+                height: 380px;
+                color: #fff;
+                z-index: 1;
+
+                .cardContent {
+                    text-align: center;
+
+                    p:last-child {
+                        margin: 3rem 0;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    display: block;
+                }
+    
+                a {
+                    background-color: #244351;
+                    padding: 1.5rem;
+                    border: 1px solid transparent;
+                    transition: .5s ease-in-out;
+
+                    &:hover {
+                        background-color: transparent;
+                        border: 1px solid #244351;
+                        color: #244351;
+                    }
+                }
+            }
+
+            .cardNews {
+                background-color: #fff;
+                color: #244351;
+
+                .cardContent {
+                    padding: 0 1rem;
+
+                    p {
+                        margin: 2rem 0 0 0;
+                    }
+
+                    p:first-child {
+                        font-weight: bold;
+                        margin: 1rem 0 0 0;
+                    }
+
+                    p:last-child {
+                        margin: 1.5rem 0 0 0;
+                    }
+
+
+                    a {
+                        background-color: transparent;
+                        color: #244351;
+                        border: none;
+                        padding: none;
+                        transition: .5s ease-in-out;
+
+                        &:hover {
+                            border: none;
+                            color: #EAB355;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*MAIN*/
+
+/*FOOTER*/
+footer {
+    margin-top: auto;
+    padding: 0 0 1.5rem 0;
+
+    section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        align-items: start;
+
+        div {
+            width: 25%;
+        }
+
+        h3 {
+            padding: 0 1rem 1rem 0;
+            border-bottom: 1px solid #868C8D;
+            color: #657e84;
+            font-weight: bold;
+        }
+
+        ul {
+            font-size: 1.4rem;
+            display: flex;
+            flex-wrap: wrap;
+            color: #657e84;
+
+            li {
+                width: 50%;
+                padding:.5rem 0;
+
+                a {
+                    color: #657e84;
+                    transition: .5s ease-in-out;
+
+                    &:hover {
+                        color: #EAB355;
+                    }
+                }
+            }
+        }
+
+        .socialMedia {
+
+            ul {
+                flex-wrap: nowrap;
+
+                a {
+                    color: #657e84;
+                    transition: none
+                }
+
+                i {
+                    transition: .5s;
+                }
+
+                .fa-linkedin-in:hover {
+                    color: rgb(34, 34, 255);
+                }
+                .fa-instagram:hover {
+                    color: purple;
+                }
+
+                .fa-x-twitter:hover {
+                    color: #333;
+                }
+                .fa-youtube:hover{
+                    color: red;
+                }
+            }
+        }
+    }
+}
+/*FOOTER*/
+
+/*MEDIA QUERIES*/
+@import "media-query";

@@ -117,6 +117,19 @@
                 justify-content: space-around;
                 flex-wrap: wrap;
                 overflow: hidden;
+                mask-image: none;
+
+                .scrollCardSchool, .scrollCardNews {
+
+                    animation: none;
+                    &:first-child .card:last-child {
+                        margin-bottom: 2rem;
+                    }
+                }
+
+                .desktopScroll {
+                    display: none;
+                }
 
                 .imageContainer {
                     overflow: hidden;
@@ -207,13 +220,23 @@
 
                 justify-content: space-between;
 
+                .scrollCardSchool, .scrollCardNews {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+
                 .imageContainer {
                     min-height: 150px;
                 }
 
                 .card {
                     width: 48%;
-                    margin: 4rem 0;
+                    margin: 2rem 0;
+                }
+
+                .desktopScroll {
+                    display: none;
                 }
             }
         }

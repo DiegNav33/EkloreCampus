@@ -258,9 +258,29 @@ main {
         }
         
         .school, .news {
+            position: relative;
             width: 48%;
             height: 650px;
-            overflow-y:scroll;
+            overflow:hidden;
+            display: flex;
+            flex-direction: column;
+            mask-image: linear-gradient(180deg,transparent,#fff 30%, #fff 70%, transparent);
+
+
+            .scrollCardSchool {
+                animation: scroll 30s linear infinite;
+            }
+
+            .scrollCardNews {
+                animation: scroll 30s linear infinite reverse;
+            }
+
+            .scrollCardSchool, .scrollCardNews {
+
+                &:first-child .card:last-child {
+                    margin-bottom: 1rem;
+                }
+            }
 
             .imageContainer {
                 width: 100%;
@@ -273,7 +293,7 @@ main {
                 margin: 2rem 0;
                 height: 380px;
                 color: #fff;
-                z-index: 1;
+                // z-index: 1;
 
                 .cardContent {
                     text-align: center;
@@ -302,9 +322,20 @@ main {
                 }
             }
 
+            @keyframes scroll{
+                0% {
+                    transform:translateY(0);
+                }
+                100% {
+                    transform:translateY(-100%);
+                }
+                
+            }
+
             .cardNews {
                 background-color: #fff;
                 color: #244351;
+                position: relative;
 
                 .cardContent {
                     padding: 0 1rem;
